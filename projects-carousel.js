@@ -1,0 +1,24 @@
+(() => {
+  const track=document.querySelector('.current-projects-track');
+  if(!track)return;
+  const viewport=document.querySelector('.current-projects-viewport');
+  const slides=[...track.querySelectorAll('.current-project-slide')];
+  const dots=document.querySelector('.project-carousel-dots');
+  const prev=document.querySelector('.project-prev');
+  const next=document.querySelector('.project-next');
+  const pause=document.querySelector('.project-carousel-pause');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let index=0,timer=null,paused=reduce.matches,hover=false,focus=false,startX=0;
+  const render=()=>{track.style.transform=`translateX(${-index*100}%)`;[...dots.children].forEach((d,i)=>d.setAttribute('aria-current',String(i===index)));};
+  slides.forEach((slide,i)=>{const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label',`Show project ${i+1}`);dot.addEventListener('click',()=>{index=i;render();restart()});dots.append(dot)});
+  const stop=()=>{if(timer)clearInterval(timer);timer=null};
+  const sync=()=>{pause.textContent=paused?'Play':'Pause';pause.setAttribute('aria-pressed',String(paused));};
+  const restart=()=>{stop();sync();if(!paused&&!hover&&!focus&&!document.hidden&&!reduce.matches&&slides.length>1)timer=setInterval(()=>{index=(index+1)%slides.length;render()},6000)};
+  const move=step=>{index=(index+step+slides.length)%slides.length;render();restart()};
+  prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
+  pause.addEventListener('click',()=>{paused=!paused;restart()});
+  viewport.addEventListener('mouseenter',()=>{hover=true;restart()});viewport.addEventListener('mouseleave',()=>{hover=false;restart()});
+  viewport.addEventListener('focusin',()=>{focus=true;restart()});viewport.addEventListener('focusout',e=>{if(!viewport.contains(e.relatedTarget)){focus=false;restart()}});
+  viewport.addEventListener('touchstart',e=>{startX=e.changedTouches[0].screenX},{passive:true});viewport.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-startX;if(Math.abs(dx)>45)move(dx<0?1:-1)},{passive:true});
+  document.addEventListener('visibilitychange',restart);reduce.addEventListener?.('change',restart);render();restart();
+})();

@@ -18,7 +18,7 @@
     }));
   }
 
-  // The homepage carousel advances every five seconds, with accessible pause controls.
+  // The homepage carousel advances every second, with accessible pause controls.
   const track = document.querySelector('.carousel-track');
   const viewport = document.querySelector('.carousel-viewport');
   const carousel = document.querySelector('.carousel');
@@ -87,7 +87,7 @@
     timer = setInterval(() => {
       page = (page + 1) % pageCount();
       render();
-    }, 5000);
+    }, 1000);
   };
   const move = direction => {
     page = (page + direction + pageCount()) % pageCount();
