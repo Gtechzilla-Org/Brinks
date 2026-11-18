@@ -77,3 +77,11 @@ The Brinks Logistics profile includes the US$35,000 non-refundable one-off Profe
 
 ## Current projects carousel
 The homepage features the current-projects carousel. Project details are presented as supplied and should be reconfirmed before publication.
+
+
+## Video gallery update
+The homepage now includes a responsive Brinks Group Videos section with all nine supplied MP4 clips. Each clip is embedded with native playback controls, inline mobile playback and metadata-only preload to reduce initial page loading. Videos are stored in `assets/videos/`. The clips are presented as supplied footage and are not assigned to a specific subsidiary or project because that mapping was not provided.
+
+
+## Current project assignment
+The supplied development footage (videos 2–9) is displayed under **Brinks Investments & Financing Limited** as the current project **Apex Medical University & Green City**, Chongwe, Central Province, Zambia. The project is marked **In Progress** and includes footage of earthworks, site preparation, paving, landscaping and site operations. The first supplied clip is kept in the general video gallery because its relationship to this development was not established.

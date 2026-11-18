@@ -505,3 +505,39 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .fee-notice h3{margin-top:24px}
 .fee-notice li{margin:9px 0;line-height:1.55}
 @media(max-width:600px){.whatsapp-contact-stack{right:12px;bottom:12px}.whatsapp-contact-stack .whatsapp-float{padding:10px 13px;font-size:12px}}
+
+
+/* Brinks Group video gallery */
+.video-gallery-section{padding:62px clamp(22px,7vw,112px) 70px;background:#edf2f6}
+.video-gallery-heading{text-align:center;max-width:760px;margin:0 auto 30px}
+.video-gallery-heading .eyebrow{justify-content:center}
+.video-gallery-heading h2{font:700 clamp(30px,3.4vw,40px) Georgia,serif;color:var(--navy);margin:10px 0}
+.video-gallery-heading>p:last-child{color:#52677a;line-height:1.7;margin:0}
+.video-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1400px;margin:0 auto}
+.video-card{min-width:0;background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e1e8ee}
+.video-card video{display:block;width:100%;aspect-ratio:9/16;max-height:440px;object-fit:contain;background:#071d30}
+.video-card-copy{padding:17px 19px 20px}
+.video-card-copy h3{font:700 20px Georgia,serif;color:var(--navy);margin:7px 0}
+.video-card-copy p{font-size:14px;line-height:1.55;color:var(--muted);margin:0}
+.video-number{font-size:10px;letter-spacing:1.5px;font-weight:800;color:#a36b12}
+@media(max-width:900px){.video-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.video-gallery-section{padding:42px 18px 48px}.video-gallery-grid{grid-template-columns:1fr;gap:17px}.video-card video{max-height:520px}}
+
+
+/* Company-specific current project showcase */
+.current-company-projects{background:#f2f5f7}
+.current-company-projects .section-heading{text-align:left;max-width:850px;margin:0 0 30px}
+.current-company-projects .section-heading .eyebrow{justify-content:flex-start}
+.featured-project{background:#fff;border:1px solid #e0e7ed;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.featured-project-copy{padding:28px 30px 20px}
+.project-status{display:inline-flex;align-items:center;background:#e8f4ed;color:#17633a;border-radius:999px;padding:6px 11px;font-size:10px;font-weight:800;letter-spacing:1.1px}
+.featured-project-copy h3{font:700 clamp(24px,3vw,34px) Georgia,serif;color:var(--navy);margin:14px 0 7px}
+.featured-project-copy .project-location{font-weight:700;color:#9a6b19;margin:0 0 10px}
+.featured-project-copy p:last-child{color:#52677a;line-height:1.7;max-width:850px;margin:0}
+.project-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:0 30px 30px}
+.project-video-card{border:1px solid #e4eaf0;border-radius:10px;overflow:hidden;background:#fbfcfd;min-width:0}
+.project-video-card video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#071d30}
+.project-video-caption{padding:12px 15px 15px}
+.project-video-caption span{font-size:9px;letter-spacing:1.4px;font-weight:800;color:#a36b12}
+.project-video-caption h4{font-size:15px;color:var(--navy);margin:5px 0 0}
+@media(max-width:650px){.featured-project-copy{padding:22px 18px 16px}.project-video-grid{grid-template-columns:1fr;padding:0 18px 20px;gap:15px}}
